@@ -1,3 +1,5 @@
+use super::interconnect;
+
 const NUM_GPR: usize = 32;
 
 #[derive(Default, Debug)]
@@ -16,6 +18,7 @@ pub struct Cpu {
     reg_fcr31: u32,
 
     cp0: Cp0,
+    interconnect: interconnect::Interconnect,
 }
 
 impl Cpu {
@@ -23,7 +26,7 @@ impl Cpu {
         self.cp0.power_on_reset()
     }
 
-    pub fn run() {
+    pub fn run(&mut self) {
 
     }
 }
